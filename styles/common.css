@@ -11,6 +11,7 @@ header{
 header h1{width: 300px;}/* 이미지비율은 가로만 써도 따라 옴 */
 header h1 a{}
 header h1 a img{width: 100%;}/* 크기를 가지는 첫번째 부모 h1한테 주기 */
+/* desktop nav */
 header nav{position: relative;}
 header nav .gnb{display: flex; }/* 기준점의 100% */
 header nav .gnb > li{
@@ -86,20 +87,48 @@ header .lnb .m_nav span:nth-child(1){top: 0;}
 header .lnb .m_nav span:nth-child(2){top: 40%;}
 header .lnb .m_nav span:nth-child(3){bottom: 0;}
 /* 전체메뉴 span*3 X모양 만들기*/
-header .lnb .m_nav span:nth-child(1){
+/* transform의 기본축은 가운데, 기본축 새로 설정해주기 */
+/* 
+header .lnb .m_nav span:nth-child(1){ 
     transform: rotate(45deg);
-    transform-origin: left top;/* transform의 기본축은 가운데, 기본축 새로 설정해주기 */
+    transform-origin: left top;
 }
 header .lnb .m_nav span:nth-child(2){display: none;}
 header .lnb .m_nav span:nth-child(3){
     transform: rotate(-45deg);
     transform-origin: left top;
 }
-header .m_nav_wrap{display: none;}
-header .m_nav_wrap .gnb{}
-header .m_nav_wrap .gnb > li{}
-header .m_nav_wrap .gnb > li > a{}
-header .m_nav_wrap .gnb > li > .sub{}
+ */
+/* m_nav_wrap */
+header .m_nav_wrap{
+    background-color: #222;
+    position: fixed; right: 0; top: 80px; z-index: 999;
+
+}
+header .m_nav_wrap .gnb{
+    background-color: #222;
+    display: flex;
+    flex-direction: column;
+    padding: 37px 0 0 24px;
+}
+header .m_nav_wrap .gnb > li{
+    padding: 20px;
+}
+header .m_nav_wrap .gnb > li > a{
+    color: #fff;
+    font-size: 1rem;
+    letter-spacing: -2%;
+    border-bottom: rgba(245,245,245,40%) solid 1px; width: 100%; display: inline-block; /* 글꼴자체에 주면 글꼴에 맞춰서 짤리기 때문에 width 주고, 인라인요소라서 inline-block 주기 */
+    padding: 10px;
+}
+header .m_nav_wrap .gnb > li > .sub{
+    padding: 10px;
+}
 header .m_nav_wrap .gnb > li > .sub li{}
-header .m_nav_wrap .gnb > li > .sub li a{}
+header .m_nav_wrap .gnb > li > .sub li a{
+    color: rgba(245,245,245,40%);
+    line-height: 1.2;
+    font-size: 1rem;
+    line-height: 1.32;
+}
 

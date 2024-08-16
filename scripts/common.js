@@ -7,3 +7,4 @@ const m_wrap = document.querySelector('.m_nav_wrap')/* 복제할 위치 변수 �
 const gnbClone = gnb.cloneNode(true)/* 복제 */
 m_wrap.appendChild(gnbClone)/* 붙여넣기 */
 console.log(gnb, m_wrap, gnbClone);
+
