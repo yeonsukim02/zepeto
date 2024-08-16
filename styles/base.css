@@ -1,0 +1,22 @@
+/* html 가지는 속성 기본값 초기화 */
+/* em rem 반응형 400 기본 16 기본 */
+/* reset */
+*{box-sizing: border-box;}
+html,body,
+h1,h2,h3,h4,h5,h6,p,
+ul,ol,li,dl,dt,dd,blockquote,q,video,img,
+table,tr,td,th,thead,tfoot,tbody,
+form,fieldset,legend,input,textarea,button,select,option,label,
+div,section,article,header,nav,main,aside,footer,address,
+figure,figcaption,sup,sub,em,strong,span,i,del,s,a,code,mark{
+    margin: 0; padding: 0; line-height: 1.0;
+    font-size: 1.0em; font-weight: 400; font-style: normal;
+    color: #000;
+    list-style: none;
+    font-family: "Noto Sans KR", sans-serif;
+}
+/* 구글폰트 노토산스코리안 get font>get embed>web link>link 추가>fontfamily 추가*/
+/* 공백있으면 "" 공백없으면 무 */
+a{text-decoration: none;}
+table,tr,td,td,th{border-collapse: collapse;}
+button{cursor: pointer;}

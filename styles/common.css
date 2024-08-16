@@ -1,0 +1,105 @@
+/* header, footer 전용 위치 */
+/* header pc */
+header{
+    background-color: #222; height: 80px;
+    max-width: 1920px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+}
+header h1{width: 300px;}/* 이미지비율은 가로만 써도 따라 옴 */
+header h1 a{}
+header h1 a img{width: 100%;}/* 크기를 가지는 첫번째 부모 h1한테 주기 */
+header nav{position: relative;}
+header nav .gnb{display: flex; }/* 기준점의 100% */
+header nav .gnb > li{
+    margin-right: 60px;
+/*     display: flex; flex-direction: column; align-items: center; */
+    position: relative;
+    z-index: 200;
+}
+header nav .gnb > li:last-child{margin: 0;}
+header nav .sub_bg{
+    /* 
+    1)::after 
+    sub 배경 공통 위치
+    가상공간 ::after나 before 만들어 주기
+    작성할 것 적어져서 li보다는 gnb에 넣어 주기
+    absolute로 빼주기
+    z-index 음수값으로 뒤에 두기
+    ::after는 li의 형제관계
+    2)sub_bg 클래스를 html에 추가
+    */
+    background-color: #222;
+    position: absolute; display: block;
+    width: 100%;/* gnb 100% */
+    height: 140px; z-index: 100;
+}
+header nav .gnb > li > a{
+    color: #fff;
+    font-size: 1.00rem;
+    letter-spacing: -2%;
+}
+header nav .gnb > li > .sub{
+    position: absolute; top: 40px;
+    text-align: center; width: max-content;
+    /* padding-top: 20px; */
+    /* absolute 적용 상태에서 요소를 부모기준 가운데 배치할 경우 */
+    left: 50%; transform: translateX(-50%);
+}/* sub은 항상 absolute로 빼주기 */
+header nav .gnb > li > .sub li{}
+header nav .gnb > li > .sub li a{
+    color: #fff;
+    line-height: 1.7;
+/*     font-size: 1.19rem;
+    letter-spacing: -2%; */
+}
+header .lnb{display: flex;}/* flex는 높이도 같이 맞춰 줌 */
+header .lnb a{margin-left: 14px;}
+header .lnb a:first-child{margin: 0;}
+header .lnb .content_link{
+    color: #fff;
+    font-size: 1.19rem;/* 19px rem단위 */
+    letter-spacing: -2%;
+    border: 2px solid #fff;
+    border-radius: 5px; padding: 4px;
+    height: max-content; /* 내용의 최대크기에 맞춰라 */
+}
+header .lnb .alarm{width: 32px; height: 32px;}
+header .lnb .alarm img{filter: invert(1); width: 100%;}/* 포토샵 컬러 오버레이 기능과 같음 */
+/* 반응형 웹의 img태그: 인라인태그로 img태그가 a태그 안에 들어가 있으면, img는 width:100%; 상대값으로 설정하고, img의 부모태그에 px 크기를 주는 방법으로 한다  */
+/* header tablet+mobile nav */
+header .lnb .m_nav{
+    background-color: brown;
+    width: 32px; height: 32px;
+    position: relative;
+}
+header .lnb .m_nav span{
+    /* span은 인라인태그라 크기가 인식안되니까 크기 넣기 */
+    display: block; height: 5px;
+    background-color: #fff;
+    position: absolute; left: 0;
+    width: 100%; /* 너비안주면 블록상태여서 기본값 0이 되어서 사라지니까 */
+}
+header .lnb .m_nav span:nth-child(1){top: 0;}
+header .lnb .m_nav span:nth-child(2){top: 40%;}
+header .lnb .m_nav span:nth-child(3){bottom: 0;}
+/* 전체메뉴 span*3 X모양 만들기*/
+header .lnb .m_nav span:nth-child(1){
+    transform: rotate(45deg);
+    transform-origin: left top;/* transform의 기본축은 가운데, 기본축 새로 설정해주기 */
+}
+header .lnb .m_nav span:nth-child(2){display: none;}
+header .lnb .m_nav span:nth-child(3){
+    transform: rotate(-45deg);
+    transform-origin: left top;
+}
+header .m_nav_wrap{display: none;}
+header .m_nav_wrap .gnb{}
+header .m_nav_wrap .gnb > li{}
+header .m_nav_wrap .gnb > li > a{}
+header .m_nav_wrap .gnb > li > .sub{}
+header .m_nav_wrap .gnb > li > .sub li{}
+header .m_nav_wrap .gnb > li > .sub li a{}
+
