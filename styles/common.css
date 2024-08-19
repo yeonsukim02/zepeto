@@ -1,3 +1,5 @@
+/* 반응형 width값 변경 시 자연스러운 동적 추가 기능, 뚝뚝 끊기는 느낌 방지 */
+*{transition: width 0.3s, font-size 0.3s;}
 /* header, footer 전용 위치 */
 /* header pc */
 header{
@@ -72,9 +74,10 @@ header .lnb .alarm img{filter: invert(1); width: 100%;}/* 포토샵 컬러 오�
 /* 반응형 웹의 img태그: 인라인태그로 img태그가 a태그 안에 들어가 있으면, img는 width:100%; 상대값으로 설정하고, img의 부모태그에 px 크기를 주는 방법으로 한다  */
 /* header tablet+mobile nav */
 header .lnb .m_nav{
-    background-color: brown;
+/*     background-color: brown; */
     width: 32px; height: 32px;
     position: relative;
+    display: none; /* pc 숨기기 */
 }
 header .lnb .m_nav span{
     /* span은 인라인태그라 크기가 인식안되니까 크기 넣기 */
@@ -84,7 +87,7 @@ header .lnb .m_nav span{
     width: 100%; /* 너비안주면 블록상태여서 기본값 0이 되어서 사라지니까 */
 }
 header .lnb .m_nav span:nth-child(1){top: 0;}
-header .lnb .m_nav span:nth-child(2){top: 40%;}
+header .lnb .m_nav span:nth-child(2){top: 50%; transform: translateY(-50%);}
 header .lnb .m_nav span:nth-child(3){bottom: 0;}
 /* 전체메뉴 span*3 X모양 만들기*/
 /* transform의 기본축은 가운데, 기본축 새로 설정해주기 */
@@ -109,7 +112,7 @@ header .m_nav_wrap .gnb{
     background-color: #222;
     display: flex;
     flex-direction: column;
-    padding: 37px 0 0 24px;
+    padding: 24px 0 0 24px;
 }
 header .m_nav_wrap .gnb > li{
     padding: 20px;
